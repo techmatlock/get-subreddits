@@ -34,7 +34,11 @@ def get_subreddit_names(access_token):
 def main():
     access_token = get_token()
 
-    get_subreddit_names(access_token)
+    all_names = get_subreddit_names(access_token)
+
+    with open("subreddits.txt", "w") as file:
+        for line in all_names:
+            file.write(str(line) + "\n")
 
 if __name__ == "__main__":
     main()
