@@ -31,7 +31,8 @@ export REDDIT_PASSWORD="password"
 4. Used code snippets from Python example header.
 
 ## Challenges/Obstacles Encountered
-I ran into an issue where the request object was a nested dictionary and couldn't be looped with a traditional for loop.  Each indice in json_data needed to be iterated and then from there I could extract the subreddit names from json_data["data"]["display_name"] was accessed.
+* I ran into an issue where the request object was a nested dictionary and couldn't be looped with a traditional for loop.  Each dictionary in json_data needed to be iterated and then from there I could extract the subreddit names from the json_data["data"] key.
+* Another issue was the default limit of subreddits returned when making a GET request to /subreddits/mine/subscriber endpoint was it only returned 25 of my subreddits.  I had to add a parameter and set limit to the max 100 in the get_subreddit_names function.
 
 ## Errors
 
