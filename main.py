@@ -11,8 +11,10 @@ def get_token():
     client_auth = requests.auth.HTTPBasicAuth(CLIENT_ID, CLIENT_SECRET)
     post_data = {"grant_type": "password", "username": USERNAME, "password": PASSWORD}
     headers = {"User-Agent": "get-subreddits"}
+
     response = requests.post("https://www.reddit.com/api/v1/access_token", 
                              auth=client_auth, data=post_data, headers=headers)
+    
     return response.json()["access_token"]
 
 def get_subreddit_names(access_token): 
@@ -26,12 +28,13 @@ def get_subreddit_names(access_token):
     for subreddit_item in json_data["data"]["children"]:
         subreddit_name = subreddit_item["data"]["display_name"] 
         all_subreddit_names.append(subreddit_name)
+
     return all_subreddit_names
 
 def main():
     access_token = get_token()
 
-    print(get_subreddit_names(access_token))
+    get_subreddit_names(access_token)
 
 if __name__ == "__main__":
     main()
