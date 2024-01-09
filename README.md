@@ -29,6 +29,7 @@ export REDDIT_PASSWORD="password"
 2. Give the app a name and once created, save your client id and client secret.
 3. Go to https://github.com/reddit-archive/reddit/wiki/OAuth2-Quick-Start-Example
 4. Used code snippets from Python example header.
+5. I mostly used this API endpoint from the documentation - https://www.reddit.com/dev/api/#GET_subreddits_mine_subscriber
 
 ## Challenges/Obstacles Encountered
 * I ran into an issue where the request object was a nested dictionary and couldn't be looped with a traditional for loop.  Each dictionary in json_data needed to be iterated and then from there I could extract the subreddit names from the json_data["data"] key.
