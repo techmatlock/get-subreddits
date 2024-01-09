@@ -1,7 +1,7 @@
 # Get Subreddits
 
 ## Description
-Python script to fetch all your subreddits you're subscribed to and convert them to a list.
+Python script to fetch all your subreddits you're subscribed to and add them to a list.
 
 ## Demo
 
